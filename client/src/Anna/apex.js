@@ -11,7 +11,7 @@ class Apex extends Component {
         return (
             <div className="container">
               <PopChart />
-              <PieChart />
+              {/* <PieChart /> */}
             </div>
           );
         }

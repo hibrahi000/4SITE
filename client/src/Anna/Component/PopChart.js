@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Chart from 'react-apexcharts';
 
-
+//this class works with apex.js and index.js to render
 class PopChart extends Component {
     constructor(props) {
         super(props);
@@ -11,12 +11,12 @@ class PopChart extends Component {
                     background: '#f4f4fa',
                     foreColor: '#333'
                 },
-                xaxis: {//Label goes here
+                xaxis: {//Label goes here (Company Names or employes names goes here)
                     categories: [
-                        'new York', 'Los Angeles', 'Chicago',
-                        'Houston', 'Philadelphia', 'Phoenix', 
-                        'San Antonio', 'San Diego', 'Dallas',
-                        'San Jose'
+                        'Amazon', 'Google', 'Microsoft',
+                        'UPS', 'FeDex', 'Costco', 
+                        'BJ/s', 'Walmart', 'Target',
+                        'Macy'
                     ]
                 },
                    //options
@@ -32,7 +32,7 @@ class PopChart extends Component {
                         enabled: false
                     },
                     title: {
-                        text: 'Largest Cities By Popuplation',
+                        text: 'Largest Employee Ratio/s By Popuplation',
                         align: 'cenetr',
                         margin: 20,
                         offSetY: 20,
@@ -43,12 +43,17 @@ class PopChart extends Component {
                 }
             },
                 series: [{
-                    name: 'Population',//Data goes here
-                    data: [8550405, 3971883, 2720546,
-                    2296224, 2296224, 1567442,
-                    1563025,1469845, 1394928,
-                    1300092, 1026908
-                    ]
+                    name: 'Population',//Data goes here (note: in this setion you can manipulate the #s to create the graph)
+                    data: [600000, 400000, 200000,
+                        12500, 9622, 15674,
+                        63025,14695, 13949,
+                        10092, 12908
+                        ]
+                    // data: [8550405, 3971883, 2720546,
+                    // 2296224, 2296224, 1567442,
+                    // 1563025,1469845, 1394928,
+                    // 1300092, 1026908
+                    // ]
                 }]
             }
         }
