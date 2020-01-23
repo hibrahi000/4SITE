@@ -24,9 +24,16 @@
   border-left: 0;
   border-right: 0;
   border-top: 0;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #ee7600;
   width: 25vw;
   height: 4vh;
+}
+.email:hover,
+.email:focus {
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 2px solid #27ae60;
 }
 .password {
   color: white;
@@ -35,10 +42,18 @@
   border-left: 0;
   border-right: 0;
   border-top: 0;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #ee7600;
 
   width: 25vw;
   height: 4vh;
+}
+
+.password:hover,
+.password:focus {
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 2px solid #27ae60;
 }
 
 .btn {
@@ -56,8 +71,8 @@
   border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 
-  background-color: #3e4350;
-  color: #ecf0f1;
+  background-color: #ee7600;
+  color: white;
 
   transition: background-color 0.3s;
 }
@@ -65,6 +80,7 @@
 .btn:hover,
 .btn:focus {
   background-color: #27ae60;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 .btn > * {
