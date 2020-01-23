@@ -24,7 +24,7 @@ export default class Login extends Component {
 
   handleSubmit(event) {
     const { email, password } = this.state;
-    this.props.isAuth();
+    //this.props.isAuth();
     // axios
     //   .post(
     //     'http://localhost:3001/sessions',
@@ -37,14 +37,14 @@ export default class Login extends Component {
     //     { withCredentials: true }
     //   )
     //   .then(response => {
-    //     if (response.data.logged_in) {
+    //     if (response.authenticated) {
     //       this.props.handleSuccessfulAuth(response.data);
     //     }
     //   })
     //   .catch(error => {
     //     console.log('login error', error);
     //   });
-    event.preventDefault();
+    // event.preventDefault();
   }
 
   render() {

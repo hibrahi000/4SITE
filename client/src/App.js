@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/UserPages/Navbar/NavBar';
-
+import LoginPage from './LoginPage';
 function App() {
   return (
     <div className="App">

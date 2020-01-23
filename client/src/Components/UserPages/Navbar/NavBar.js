@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Login from '../../Login/Login';
-import Home from '../HomePage/HomePage';
+import logo from './Logo_01.png';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class NavBar extends Component {
   render() {
     return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="/">Home</Navbar.Brand>
+        <Navbar.Brand href="/home">
+          <img src={logo} width="100" height="100" alt="4sitelogo" />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto"></Nav>
