@@ -1,7 +1,23 @@
-.chart {
+/*CSS for the Apex.js*/
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  margin: 70px auto;
+  overflow: hidden;
+  width: 80%;
+  text-align: center;
+}
+
+
+
+
+/*CSS for the charts.js*/
+/* .chart {
   width: 25em;
   height: 50em;
-}
+} */
 /* #bar {
   width: 5em;
   height: 2em;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Chart from './Anna/charts';
 
+//note: this code renders with chart.js file as well
 class App extends Component {
     constructor() {
         super();
