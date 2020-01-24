@@ -9,42 +9,41 @@ import CenteredTabs from '../MaterialTabs/CenteredTabs';
 require('./styles.css');
 
 class HomePage extends Component {
-  state = {
-    value: 0
-  };
-   user = this.props.location.state.user;
- 
-  handleChange = value => {
-    this.setState({ value });
-  };
+	state = {
+		value: 0
+	};
 
-  handleView = value => {
-    switch (value) {
-      case 2:
-        return <VerticalTabs3 label={['Machine1', 'Machine2', 'Machine3']} />;
-      case 1:
-        return <VerticalTabs2 label={['store1', 'store2', 'store3']} />;
-      default:
-        return <VerticalTabs label={['overall', 'finances', 'resources']} />;
-    }
-  };
+	handleChange = (value) => {
+		this.setState({ value });
+	};
 
-  render() {
-    const value = this.state.value;
-    console.log(value);
-    const Tabs = this.handleView(value);
-    console.log(user);
-    return (
-      <div>
-        <Navbar />
-        <CenteredTabs
-          handleChange={this.handleChange}
-          label={['Company Overall', 'Stores Status', 'Maintenance']}
-        />
-        <header className="App-header">{Tabs}</header>
-      </div>
-    );
-  }
+	handleView = (value) => {
+		switch (value) {
+			case 2:
+				return <VerticalTabs3 label={[ 'Machine1', 'Machine2', 'Machine3' ]} />;
+			case 1:
+				return <VerticalTabs2 label={[ 'store1', 'store2', 'store3' ]} />;
+			default:
+				return <VerticalTabs label={[ 'overall', 'finances', 'resources' ]} />;
+		}
+	};
+
+	render() {
+		const value = this.state.value;
+		console.log(value);
+		const Tabs = this.handleView(value);
+
+		return (
+			<div>
+				<Navbar />
+				<CenteredTabs
+					handleChange={this.handleChange}
+					label={[ 'Company Overall', 'Stores Status', 'Maintenance' ]}
+				/>
+				<header className="App-header">{Tabs}</header>
+			</div>
+		);
+	}
 }
 
 export default HomePage;
