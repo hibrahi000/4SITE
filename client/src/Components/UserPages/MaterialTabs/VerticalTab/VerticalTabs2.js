@@ -9,6 +9,7 @@ import { StylesProvider } from '@material-ui/core/styles';
 import Cards from '../../../Card/Cards';
 import PieChart from '../../../Charts/Component/PieChart';
 import Apex from '../../../Charts/apex';
+import MixedChart from '../../../Charts/Component/MixedChart';
 require('./styles.css');
 
 function TabPanel(props) {
