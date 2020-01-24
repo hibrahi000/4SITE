@@ -35,3 +35,10 @@
   justify-content: space-around;
   flex-flow: row wrap;
 }
+
+.CardsContainer {
+  width: 50vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}

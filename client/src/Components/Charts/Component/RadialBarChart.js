@@ -47,7 +47,6 @@ class RadialBarChart extends React.Component {
           options={this.state.options}
           series={this.state.series}
           type="radialBar"
-          height={350}
         />
       </div>
     );

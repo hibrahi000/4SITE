@@ -68,30 +68,11 @@ class PopChart extends Component {
             10092,
             12908
           ]
-          // data: [8550405, 3971883, 2720546,
-          // 2296224, 2296224, 1567442,
-          // 1563025,1469845, 1394928,
-          // 1300092, 1026908
-          // ]
         }
       ]
     };
   }
 
-  onClick = () => {
-    this.setState({
-      options: {
-        ...this.state.options,
-        plotOptions: {
-          ...this.state.options.plotOptions,
-          bar: {
-            ...this.state.options.plotOptions.bar,
-            horizontal: !this.state.options.plotOptions.bar.horizontalS
-          }
-        }
-      }
-    });
-  };
   render() {
     return (
       <React.Fragment>
@@ -99,10 +80,7 @@ class PopChart extends Component {
           options={this.state.options}
           series={this.state.series}
           type="area"
-          height="250"
-          width="200%"
         />
-        <button onClick={this.onClick}>Change</button>
       </React.Fragment>
     );
   }

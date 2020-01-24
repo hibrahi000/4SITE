@@ -7,13 +7,26 @@ body,
   flex-direction: column;
   display: flex;
 }
-
+li {
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-bottom: 1%;
+  font-size: large;
+}
+h3 {
+  margin: 2%;
+}
 .App-logo {
   height: 25vmin;
   pointer-events: none;
-  margin-bottom: 2%;
+  margin-bottom: 5%;
 }
-
+.missionFlex {
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  margin: 1%;
+}
 .App-header {
   margin-right: auto;
   margin-left: auto;
