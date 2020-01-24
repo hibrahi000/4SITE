@@ -1,13 +1,22 @@
-const { getAllCampuses } = require('../api/campusDB');
-const { getStudentById } = require('../api/studentDB');
+const passport = require('passport');
+const {authenticateUser,serialize, isAuthenticated} = require('../api/authenticate');
 
-exports.homepage_load = (req, res, next) => {
-	console.log('Loading Login Page');
-	res.send({ express: 'YOUR HOME PAGE' });
-};
-exports.test_load = (req, res, next) => {
-	// getStudentById(1).then((data) => console.log(data));
-	// getAllCampuses().then(data => {
-	// 	res.send({express : data});
+exports.validateUser = (req, res, next) => {
+	// let {username, password} = req.body;
+	// authenticateUser(username,password).then(response => {
+	// 	// if(response.authenticated){
+	// 	// 	serialize(req,res,next);
+	// 	// }
+	// 	res.send({response : response});
 	// })
+
+	res.send({response: req});
+};
+
+exports.authenticateUser = (req,res,next) => {
+	isAuthenticated(req,res,next);
+}
+
+exports.test_load = (req, res, next) => {
+	res.send({ test: 'this is a test' });
 };

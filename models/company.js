@@ -13,6 +13,7 @@ module.exports = db.define('company', {
 		allowNull: false
 	},
 	number_of_stores: {
-		type: Sequelize.INTEGER
+		type: Sequelize.INTEGER,
+		default : 0
 	}
 });

@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { load_user } = require('../middleware/loginMiddleware');
+const { load_user, authenticateUser } = require('../middleware/loginMiddleware');
 
-router.get('/',load_user);
+router.get('/Authenticated',authenticateUser);
 
 
 module.exports = router;

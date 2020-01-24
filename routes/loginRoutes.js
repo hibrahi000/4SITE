@@ -1,10 +1,11 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const router = express.Router();
-const { login_load, validateUser} = require('../middleware/loginMiddleware');
-const urlencoded = express.urlencoded({extended: true});
+const { test_load, validateUser} = require('../middleware/loginMiddleware');
+const urlencoded = bodyParser.urlencoded({ extended: false });
 
-router.get('/', login_load);
 
-router.post('/Validate',urlencoded, validateUser);
+router.get('/', test_load)
+router.post('/Validate', validateUser);
 
 module.exports = router;

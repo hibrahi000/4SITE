@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('../config/database');
-const company = require('./company.js');
+const company = require('./company');
 const equipment = require('./equipment');
 module.exports = db.define('store', {
 	id: {
@@ -25,29 +25,5 @@ module.exports = db.define('store', {
 			key: 'id'
 		},
 		allowNull: false
-	},
-	equipment_list: [
-		{
-			equipment_id: {
-				type: Sequelize.INTEGER,
-				reference: {
-					model: equipment,
-					key: 'id'
-				}
-			},
-			day_left_maintenance: {
-				type: Sequelize.INTEGER,
-				default: 0
-			},
-			functional: {
-				type: Sequelize.BOOLEAN,
-				default: true
-			},
-			months_in_use: {
-				type: Sequelize.INTEGER,
-				default: 0
-			},
-			allowNull: true
-		}
-	]
+	}
 });
