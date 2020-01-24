@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('../config/database');
-module.exports = db.define('company', {
+module.exports = db.define('company_data', {
 	id: {
 		type: Sequelize.INTEGER,
 		allowNull: false,

@@ -1,11 +1,8 @@
 const bcrypt = require('bcrypt');
 
-exports.encryptString = async (stringObj) => {
-	bcrypt
-		.genSalt(10, (err, salt) =>
-			bcrypt.hash(stringObj, salt).then((err, hash) => {
-				err ? console.log(err) : hash;
-			})
-		)
-		.catch((err) => console.log(err));
+exports.encryptString = async (stringObj, callback) => {
+	return await bcrypt.genSalt(10, async (err, salt) => {
+		const hash = await bcrypt.hash(stringObj, salt);
+		return hash;
+	});
 };

@@ -73,9 +73,16 @@ exports.getStoreByNumberOfEmployee = async (query) => {
 
 // :: UPDATE
 exports.addEmployee = async (store_id) => {
-	this.getStoreById(store_id).then((store) => {
-		if (store.number_of_employees !== 0) {
-			store.decrement('number_of_employees', { by: 1 }).then(() => console.log('Number of employees was decremented')).catch(err =>  console.log());
+	store.findOne({ where: { id: store_id } }).then((storeObj) => {
+		if (storeObj.number_of_employees !== 0) {
+			storeObj.increment('number_of_employees', { by: 1 }).then(() => console.log('Number of employees was Incremented')).catch(err =>  console.log());
+		}
+	});
+};
+exports.removeEmployee = async (store_id) => {
+	store.findOne({ where: { id: store_id } }).then((storeObj) => {
+		if (storeObj.number_of_employees !== 0) {
+			storeObj.decrement('number_of_employees', { by: 1 }).then(() => console.log('Number of employees was Decremented')).catch(err =>  console.log());
 		}
 	});
 };

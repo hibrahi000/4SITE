@@ -32,21 +32,30 @@ exports.dbConnectionAuth = () => {
 // :: CREATE
 
 exports.addUser = async (firstName, lastName, user_name, password, company_id, store_id) => {
-	const userObj = {
-		first_name: firstName.toUpperCase(),
-		last_name: lastName.toUpperCase(),
-		user_name: user_name.toLowerCase(),
-		password: await encrypt.encryptString(password).then((data) => data),
-		company_id: company_id,
-		store_id: store_id
-	};
-	users.create(userObj).then((newUser) => {
-		console.log(
-			`Successfully Created new User`,
-			`User ID: ${newUser.id} <----> Store ID: ${newUser.store_id} <---> Company ID: ${newUser.company_id}`
-		);
-		campusApi.addStudent(newStudent.campus_id);
-	});
+	bcrypt.genSalt(10, (err, salt) =>
+		bcrypt
+			.hash(password, salt)
+			.then((hash, err) => {
+				const userObj = {
+					first_name: firstName.toUpperCase(),
+					last_name: lastName.toUpperCase(),
+					user_name: user_name.toLowerCase(),
+					password: hash,
+					company_id: company_id,
+					store_id: store_id
+				};
+
+				users.create(userObj).then((newUser) => {
+					console.log(
+						`Successfully Created new User`,
+						`User ID: ${newUser.id} <----> Store ID: ${newUser.store_id} <---> Company ID: ${newUser.company_id}`
+					);
+					storeApi.addEmployee(newUser.store_id);
+				});
+			})
+			.catch(() => console.log('Error encrypting'))
+	);
+	console.log(await password);
 };
 
 // :: READ
@@ -59,7 +68,7 @@ exports.getAllUsers = async () => {
 
 exports.getUserById = async (query) => {
 	// console.log(query);
-	return await users
+	return users
 		.findOne({
 			where: { id: query }
 		})
@@ -68,28 +77,28 @@ exports.getUserById = async (query) => {
 };
 
 exports.getUserByFirstName = async (query) => {
-	return await user
+	return user
 		.findAll({ where: { first_name: query } })
 		.then((data) => data)
 		.catch((err) => console.log('error in query Users', err));
 };
 
 exports.getUserByLastName = async (query) => {
-	return await user
+	return user
 		.findAll({ where: { last_name: query } })
 		.then((data) => data)
 		.catch((err) => console.log('error in query', err));
 };
 
 exports.getUserByUserName = async (query) => {
-	return await users
-		.findAll({ where: { user_name: query } })
+	return users
+		.findOne({ where: { user_name: query } })
 		.then((data) => data)
 		.catch((err) => console.log('error in getting User by username', err));
 };
 
 exports.getUserByCompanyId = async (query) => {
-	return await users
+	return users
 		.findAll({ where: { company_id: query } })
 		.then((data) => data)
 		.catch((err) => console.log('error in query', err));
@@ -106,7 +115,8 @@ exports.getUserByStoreId = async (query) => {
 // :: UPDATE
 
 exports.updateUserFirstName = async (first_name, userId) => {
-	this.getUserById(userId)
+	users
+		.findOne({ where: { id: userId } })
 		.then(async (user) => {
 			user.first_name = first_name;
 			await user.save();
@@ -114,7 +124,8 @@ exports.updateUserFirstName = async (first_name, userId) => {
 		.catch((err) => console.log('ERROR: couldnt update user first name'));
 };
 exports.updateUserLastName = async (last_name, userId) => {
-	this.getUserById(userId)
+	users
+		.findOne({ where: { id: userId } })
 		.then(async (user) => {
 			user.last_name = last_name;
 			await user.save();
@@ -130,13 +141,21 @@ exports.updateEmployeeUserName = async (user_name, userId) => {
 		.catch((err) => console.log('ERROR: couldnt update user user name'));
 };
 exports.updateUserPassword = async (userId, newPassword) => {
-	this.getUserById(userId).then(async (user) => {
-		user.password = await encrypt.encryptString(newPassword).then((pass) => pass).catch((err) => console.log(err));
-		await user.save();
+	users.findOne({ where: { id: userId } }).then((user) => {
+		bcrypt.genSalt(10, (err, salt) =>
+			bcrypt
+				.hash(newPassword, salt)
+				.then((hash, err) => {
+					console.log(hash);
+
+					// users.update({ password: hash, where: { id: user.id } });
+				})
+				.catch(() => console.log('Error encrypting'))
+		);
 	});
 };
 exports.updateUserStoreId = async (userId, newStoreId) => {
-	this.getEmployeeById(userId).then(async (user) => {
+	users.findOne({ where: { id: userId } }).then(async (user) => {
 		user.store_id = newStoreId;
 		await user.save();
 	});

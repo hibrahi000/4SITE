@@ -36,7 +36,7 @@ exports.getCompanyById = async (query) => {
 	console.log(query);
 	return await company
 		.findOne({ where: { id: query } })
-		.then((data) => data)
+		.then((data) => data.dataValues)
 		.catch((err) => console.log('error in query'));
 };
 exports.getCompanyByName = async (query) => {
