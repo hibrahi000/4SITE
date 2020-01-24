@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.28 20.56">
+    <defs>
+        <style>.cls-1{font-size:18.64px;font-family:MyriadPro-BoldIt, Myriad Pro;font-weight:700;font-style:italic;}.cls-1,.cls-4{fill:#27ae60;}.cls-2,.cls-3{fill:none;stroke-miterlimit:10;stroke-width:0.25px;}.cls-2{stroke:#ee7600;}.cls-3{stroke:#27ae60;}.cls-5{font-size:4.35px;fill:#c15200;font-family:MyriadPro-Regular, Myriad Pro;}</style>
+    </defs>
+    <title>Asset 1</title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_7" data-name="Layer 7">
+            <text class="cls-1" transform="translate(0 15.6)">4</text>
+            <polyline class="cls-2" points="12.66 8.8 11.12 10.41 11.12 13.03" />
+            <polyline class="cls-2" points="8.21 17.95 11.15 17.98 11.15 15.35" />
+            <polyline class="cls-2" points="21.16 17.45 16.15 17.45 15.3 15.13" />
+            <polyline class="cls-2" points="14.57 19.71 12.62 17.47 12.62 15.19" />
+            <polyline class="cls-2" points="21.16 10.89 17.37 10.91 15.23 12.67" />
+            <line class="cls-2" x1="15.1" y1="13.9" x2="22.32" y2="13.9" />
+            <line class="cls-2" x1="8.3" y1="17.91" x2="6.51" y2="19.08" />
+            <circle class="cls-3" cx="13.04" cy="8.38" r="0.42" />
+            <circle class="cls-3" cx="14.81" cy="20.01" r="0.42" />
+            <circle class="cls-3" cx="22.74" cy="13.9" r="0.42" />
+            <circle class="cls-3" cx="21.5" cy="17.45" r="0.42" />
+            <circle class="cls-4" cx="21.5" cy="10.91" r="0.42" />
+            <circle class="cls-4" cx="6.22" cy="19.29" r="0.42" />
+            <line class="cls-2" x1="9.02" y1="15.09" x2="8.07" y2="16.16" />
+            <path class="cls-3" d="M8.3,16.41A.42.42,0,1,1,7.88,16,.41.41,0,0,1,8,16,.44.44,0,0,1,8.3,16.41Z" />
+            <text class="cls-5" transform="translate(8.67 15.43) scale(0.92 1)">SITE</text>
+        </g>
+    </g>
+</svg>
