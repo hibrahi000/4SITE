@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import classes from './Login.module.css';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 export default class Login extends Component {
   constructor(props) {
@@ -24,6 +25,7 @@ export default class Login extends Component {
 
   handleSubmit(event) {
     const { email, password } = this.state;
+
     //this.props.isAuth();
     // axios
     //   .post(

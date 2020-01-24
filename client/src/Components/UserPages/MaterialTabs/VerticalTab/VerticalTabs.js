@@ -6,6 +6,9 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { StylesProvider } from '@material-ui/core/styles';
+import Apex from '../../../Charts/apex';
+import PieChart from '../../../Charts/Component/PieChart';
+import RadialBarChart from '../../../Charts/Component/RadialBarChart';
 require('./styles.css');
 
 function TabPanel(props) {
@@ -74,14 +77,14 @@ export default function VerticalTabs(props) {
           <Tab label={props.label[2]} {...a11yProps(2)} />
         </Tabs>
         <TabPanel value={value} index={0}>
-          Item One
+          <div className="chartFlex">
+            <Apex />
+            <RadialBarChart />
+            <PieChart />
+          </div>
         </TabPanel>
-        <TabPanel value={value} index={1}>
-          Item Two
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          Item Three
-        </TabPanel>
+        <TabPanel value={value} index={1}></TabPanel>
+        <TabPanel value={value} index={2}></TabPanel>
       </StylesProvider>
     </div>
   );

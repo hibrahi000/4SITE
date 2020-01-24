@@ -1,6 +1,7 @@
 .MuiTab-wrapper:hover,
 .MuiTab-wrapper:focus {
   color: #27ae60;
+  border-bottom: 2px solid #27ae60;
 }
 .MuiButtonBase-root {
   outline: none;

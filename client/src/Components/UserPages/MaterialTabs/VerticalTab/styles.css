@@ -28,3 +28,10 @@
 .MuiTabs-flexContainerVertical {
   outline: none;
 }
+
+.chartFlex {
+  display: flex;
+
+  justify-content: space-around;
+  flex-flow: row wrap;
+}

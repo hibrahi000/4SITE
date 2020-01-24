@@ -14,7 +14,7 @@ require('./styles.css');
 
 const useStyles = makeStyles({
   root: {
-    margin: '2% 15%',
+    marginTop: '2%',
     flexGrow: 1,
     background: '#333A40',
     borderRadius: '0',
