@@ -8,7 +8,7 @@ class NavBar extends Component {
   render() {
     return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="/home">
+        <Navbar.Brand href="/">
           <img src={logo} width="100" height="100" alt="4sitelogo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

@@ -12,7 +12,8 @@ class HomePage extends Component {
   state = {
     value: 0
   };
-
+   user = this.props.location.state.user;
+ 
   handleChange = value => {
     this.setState({ value });
   };
@@ -32,7 +33,7 @@ class HomePage extends Component {
     const value = this.state.value;
     console.log(value);
     const Tabs = this.handleView(value);
-
+    console.log(user);
     return (
       <div>
         <Navbar />

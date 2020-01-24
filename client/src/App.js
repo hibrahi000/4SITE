@@ -12,7 +12,9 @@ function App() {
       <br />
       <header className="App-header">
         <div className="missionFlex">
+          <a href='/Home'>
           <img src={logo} className="App-logo" alt="logo" />
+          </a>
           <h3>
             Our team developed an application like an inhouse safety evaluator
             for any company such as Walmart.
