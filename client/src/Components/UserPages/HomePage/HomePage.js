@@ -20,7 +20,7 @@ class HomePage extends Component {
   handleView = value => {
     switch (value) {
       case 2:
-        return <VerticalTabs3 label={['Machine', 'Machine', 'Machine']} />;
+        return <VerticalTabs3 label={['Machine1', 'Machine2', 'Machine3']} />;
       case 1:
         return <VerticalTabs2 label={['store1', 'store2', 'store3']} />;
       default:
@@ -38,7 +38,7 @@ class HomePage extends Component {
         <Navbar />
         <CenteredTabs
           handleChange={this.handleChange}
-          label={['one', 'two', 'three']}
+          label={['Company Overall', 'Stores Status', 'Maintenance']}
         />
         <header className="App-header">{Tabs}</header>
       </div>

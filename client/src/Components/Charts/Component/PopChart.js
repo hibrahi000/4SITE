@@ -78,20 +78,6 @@ class PopChart extends Component {
     };
   }
 
-  onClick = () => {
-    this.setState({
-      options: {
-        ...this.state.options,
-        plotOptions: {
-          ...this.state.options.plotOptions,
-          bar: {
-            ...this.state.options.plotOptions.bar,
-            horizontal: !this.state.options.plotOptions.bar.horizontalS
-          }
-        }
-      }
-    });
-  };
   render() {
     return (
       <React.Fragment>
@@ -102,7 +88,6 @@ class PopChart extends Component {
           height="250"
           width="200%"
         />
-        <button onClick={this.onClick}>Change</button>
       </React.Fragment>
     );
   }

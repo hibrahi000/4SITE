@@ -1,4 +1,4 @@
-.Login {
+.formContainer {
   width: 30vw;
   height: 50vh;
   background-color: #333a40;
@@ -6,36 +6,19 @@
 
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center;
   justify-content: space-around;
+  outline: none;
 }
 
-.login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.email {
+.form {
+  width: 85%;
   color: white;
-  font-size: large;
-  background: transparent;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  border-bottom: 2px solid #ee7600;
-  width: 25vw;
-  height: 4vh;
+  outline: none;
 }
-.email:hover,
-.email:focus {
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  border-bottom: 2px solid #27ae60;
-}
-.password {
+.label {
+  border-radius: 0;
   margin-top: 12px;
   color: white;
   font-size: large;
@@ -47,15 +30,16 @@
   width: 25vw;
   height: 4vh;
 }
-
-.password:hover,
-.password:focus {
+.label:hover,
+.label:focus {
   border-left: 0;
   border-right: 0;
   border-top: 0;
   border-bottom: 2px solid #27ae60;
+  background-color: transparent;
+  outline: none;
+  color: white;
 }
-
 .btn {
   position: relative;
   font-size: large;
