@@ -10,6 +10,8 @@ import Apex from '../../../Charts/apex';
 import PieChart from '../../../Charts/Component/PieChart';
 import RadialBarChart from '../../../Charts/Component/RadialBarChart';
 import Cards from '../../../Card/Cards';
+import CustomBar from '../../../Charts/Component/CustomBar';
+import MixedChart from '../../../Charts/Component/MixedChart';
 require('./styles.css');
 
 function TabPanel(props) {
@@ -77,6 +79,7 @@ export default function VerticalTabs(props) {
           <Tab label={props.label[1]} {...a11yProps(1)} />
           <Tab label={props.label[2]} {...a11yProps(2)} />
         </Tabs>
+
         <TabPanel value={value} index={0}>
           <div className="CardsContainer">
             <Cards title="Pie Chart" graph={<PieChart></PieChart>} />
@@ -84,7 +87,14 @@ export default function VerticalTabs(props) {
             <Cards title="Area Graph" graph={<Apex />} />
           </div>
         </TabPanel>
-        <TabPanel value={value} index={1}></TabPanel>
+
+        <TabPanel value={value} index={1}>
+          <div className="CardsContainer">
+            <Cards title="CustomBar" graph={<CustomBar />} />
+            <Cards title="Mixed" graph={<MixedChart />} />
+          </div>
+        </TabPanel>
+
         <TabPanel value={value} index={2}></TabPanel>
       </StylesProvider>
     </div>

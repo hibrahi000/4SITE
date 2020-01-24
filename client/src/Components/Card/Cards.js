@@ -10,8 +10,8 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   card: {
-    width: 350,
-    height: 300,
+    width: 'auto',
+    height: 'auto',
     backgroundColor: '#3e4250',
     color: 'white'
   },
