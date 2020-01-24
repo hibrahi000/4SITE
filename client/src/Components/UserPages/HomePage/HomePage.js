@@ -7,10 +7,20 @@ import VerticalTabs2 from '../MaterialTabs/VerticalTab/VerticalTabs2';
 import VerticalTabs3 from '../MaterialTabs/VerticalTab/VerticalTabs3';
 import CenteredTabs from '../MaterialTabs/CenteredTabs';
 require('./styles.css');
-
+const axios = require('axios');
 class HomePage extends Component {
 	state = {
-		value: 0
+		value: 0,
+		row: []
+	};
+
+	componentDidMount = () => {
+		axios
+			.get('/Home/GetEmployees')
+			.then((data) => {
+				this.setState({ row: data.data.row });
+			})
+			.catch((err) => console.log(err));
 	};
 
 	handleChange = (value) => {
@@ -22,7 +32,7 @@ class HomePage extends Component {
 			case 2:
 				return <VerticalTabs3 label={[ 'Machine1', 'Machine2', 'Machine3' ]} />;
 			case 1:
-				return <VerticalTabs2 label={[ 'store1', 'store2', 'store3' ]} />;
+				return <VerticalTabs2 row={this.state.row} label={[ 'store1', 'store2', 'store3' ]} />;
 			default:
 				return <VerticalTabs label={[ 'overall', 'finances', 'resources' ]} />;
 		}

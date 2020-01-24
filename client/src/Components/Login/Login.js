@@ -14,7 +14,9 @@ export default class Login extends Component {
 			user: '',
 			store: '',
 			company: '',
-			redirect: false
+			redirect: false,
+			wrongPass: false,
+			message: ''
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,25 +32,32 @@ export default class Login extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 		const { username, password } = this.state;
-
-		console.log(username, password);
-		axios
-			.post(`/Login/Validate?username=${username}&password=${password}`)
-			.then((response) => {
-				console.log(response.data.authenticated);
-				if (response.data.authenticated) {
-					let user = response.data.response;
-					axios.get(`/Home?id=${user.id}`).then((response) => {
-						let user = response.data.user;
-						let store = response.data.store;
-						let company = response.data.company;
-						this.setState({ user: user, store: store, company: company, redirect: true });
-					});
-				}
-			})
-			.catch((error) => {
-				console.log('login error', error);
-			});
+		console.log('this', username);
+		if (username === '' || username === undefined || password === '' || password === undefined) {
+			this.setState({ message: 'Please Fill All Fields', wrongPass: true });
+		} else {
+			console.log(username, password);
+			axios
+				.post(`/Login/Validate?username=${username}&password=${password}`)
+				.then((response) => {
+					console.log(response.data.authenticated);
+					if (response.data.authenticated) {
+						let user = response.data.response;
+						axios.get(`/Home?id=${user.id}`).then((response) => {
+							let user = response.data.user;
+							let store = response.data.store;
+							let company = response.data.company;
+							this.setState({ user: user, store: store, company: company, redirect: true });
+						});
+					} else {
+						this.setState({ message: 'Error: Wrong Credentials', wrongPass: true });
+					}
+				})
+				.catch((error) => {
+					console.log('login error', error);
+					this.setState({ message: 'Error: Wrong Credentials', wrongPass: true });
+				});
+		}
 	}
 
 	render() {
@@ -63,9 +72,12 @@ export default class Login extends Component {
 			<div />
 		);
 
+		let errMessage = this.state.wrongPass ? <p className={classes.errMsg}>{this.state.message}</p> : <div />;
 		return (
 			<div className={classes.Login}>
+				<h1 className={classes.loginHeader}>Login</h1>
 				<form className={classes.login}>
+					{errMessage}
 					<input
 						className={classes.email}
 						type="username"

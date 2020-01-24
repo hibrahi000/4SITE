@@ -1,7 +1,7 @@
 const userApi = require('../api/users');
 const storeApi = require('../api/store');
 const companyApi = require('../api/company');
-
+const employeeApi = require('../api/employee');
 exports.load_user = (req, res, next) => {
 	console.log(req.query);
 	let { id } = req.query;
@@ -42,3 +42,9 @@ exports.load_homePage = (req, res, next) => {
 	console.log(user,'this', store, 'this', company);
 	res.send({ user: user, store: store, company: company });
 };
+
+exports.loadAllEmployees = (req,res,next) => {
+	employeeApi.getAllEmployees().then(data => {
+		res.send({row : data});
+	})
+}

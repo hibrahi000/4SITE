@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
+import ReactVirtualizedTable from '../../../Table/Table';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -11,6 +12,7 @@ import PieChart from '../../../Charts/Component/PieChart';
 import Apex from '../../../Charts/apex';
 import MixedChart from '../../../Charts/Component/MixedChart';
 require('./styles.css');
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -87,7 +89,7 @@ export default function VerticalTabs2(props) {
           ​
         </TabPanel>
         <TabPanel value={value} index={1}>
-          Item Two
+          <ReactVirtualizedTable row={props.row}/>
         </TabPanel>
         <TabPanel value={value} index={2}>
           Item Three
