@@ -1,7 +1,8 @@
 const Sequelize = require('sequelize');
 const db = require('../config/database');
-const campus = require('./campus');
-module.exports = db.define('student', {
+const company = require('./company.js');
+const store = require('./store.js');
+module.exports = db.define('users', {
 	id: {
 		type: Sequelize.INTEGER,
 		allowNull: false,
@@ -17,22 +18,29 @@ module.exports = db.define('student', {
 		type: Sequelize.STRING(50),
 		allowNull: false
 	},
-	gender: {
-		type: Sequelize.STRING(50)
+	user_name: {
+		type: Sequelize.STRING(50),
+		unique: true,
+		allowNull: false
 	},
-	email: {
-		type: Sequelize.STRING(50)
+	password: {
+		type: Sequelize.STRING(255),
+		unique: true,
+		allowNull: false
 	},
-	date_of_birth: {
-		type: Sequelize.DATE
-	},
-
-	campus_id: {
+	company_id: {
 		type: Sequelize.INTEGER,
 		references: {
-			model: campus,
+			model: company,
 			key: 'id'
-        }
-        // ^^ the reference attribute is to reference the table imported above as campus
+		}
+	},
+	store_id: {
+		type: Sequelize.INTEGER,
+		references: {
+			model: store,
+			key: 'id'
+		}
 	}
 });
+

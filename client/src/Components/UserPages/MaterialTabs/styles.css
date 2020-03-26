@@ -1,0 +1,24 @@
+.MuiTab-wrapper:hover,
+.MuiTab-wrapper:focus {
+  color: #27ae60;
+  border-bottom: 2px solid #27ae60;
+}
+.MuiButtonBase-root {
+  outline: none;
+}
+.MuiTab-textColorPrimary {
+  color: #8f9597;
+}
+.MuiTab-textColorPrimary.Mui-selected {
+  color: #ee7600;
+  outline: none;
+}
+.MuiTab-textColorPrimary:hover,
+.MuiTab-textColorPrimary:active,
+.MuiTab-textColorPrimary:focus {
+  outline: none;
+}
+
+.PrivateTabIndicator-colorPrimary-55 {
+  background-color: #ee7600;
+}
