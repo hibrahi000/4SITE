@@ -1,5 +1,5 @@
 /*CSS for the Apex.js*/
-body{
+/* body{
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -8,16 +8,14 @@ body{
   overflow: hidden;
   width: 80%;
   text-align: center;
-}
-
-
+} */
 
 
 /*CSS for the charts.js*/
-/* .chart {
-  width: 25em;
-  height: 50em;
-} */
+.chart {
+  width: 25%;
+  height: 50%;
+} 
 /* #bar {
   width: 5em;
   height: 2em;
@@ -29,4 +27,4 @@ body{
 #line {
   width: 50px;
   height: 20px;
-} */
+}*/

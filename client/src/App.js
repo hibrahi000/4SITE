@@ -20,8 +20,8 @@ class App extends Component {
         //Ajax calls here
         this.setState({
             chartData: {
-                labels: ['Boston', 'Worcester', 'Springfield', 
-                'Lowell', 'Cambridge', 'New Bedford'],
+                labels: ['Amazon', 'Google', 'Microsoft', 
+                'UPS', 'FeDex', 'Costco'],
                 datasets: [
                     {
                         label: 'Population',

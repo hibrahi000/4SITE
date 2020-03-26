@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Apex from './Anna/apex';
+// import Apex from './Anna/apex';
 import PopChart from './Anna/Component/PopChart';
 // import Chart from './Anna/charts';
 // import Anna from './Anna/anna';
@@ -11,8 +11,8 @@ import PopChart from './Anna/Component/PopChart';
 import * as serviceWorker from './serviceWorker';
 
 
-ReactDOM.render(<Apex />, document.getElementById('root'));
-// ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render(<Apex />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 //ReactDOM.render(<Anna />, document.getElementById('root'));
 // ReactDOM.render(<Graphs />, document.getElementById('root'));
 
