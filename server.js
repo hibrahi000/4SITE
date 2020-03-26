@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 // This is a test code
-||||||| merged common ancestors
-=======
 require('dotenv').config();
 const express = require('express');
 const sessions = require('cookie-session');
@@ -47,4 +44,3 @@ const encrypt = require('./api/encrypt');
 const storeApi = require('./api/store');
 
 // userApi.addUser('John','Smith','JSmith123','Password',1,1)
->>>>>>> da31704fcc4842dc9603bcb073947a2c4aab9838

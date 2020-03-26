@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 import React, { Component } from 'react';
-||||||| merged common ancestors
-import React from 'react';
-import logo from './logo.svg';
-=======
 import React from 'react';
 import logo from './Logo_01.png';
->>>>>>> da31704fcc4842dc9603bcb073947a2c4aab9838
 import './App.css';
 <<<<<<< HEAD
 import Chart from './Anna/charts';

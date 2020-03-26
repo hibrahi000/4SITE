@@ -14,16 +14,12 @@ import LoginPage from './LoginPage';
 import ContactPage from './ContactPage';
 import HomePage from './Components/UserPages/HomePage/HomePage';
 
-<<<<<<< HEAD
 
 // ReactDOM.render(<Apex />, document.getElementById('root'));
 ReactDOM.render(<App />, document.getElementById('root'));
 //ReactDOM.render(<Anna />, document.getElementById('root'));
 // ReactDOM.render(<Graphs />, document.getElementById('root'));
 
-||||||| merged common ancestors
-ReactDOM.render(<App />, document.getElementById('root'));
-=======
 const routing = (
   <Router>
     <div>
@@ -35,7 +31,6 @@ const routing = (
   </Router>
 );
 ReactDOM.render(routing, document.getElementById('root'));
->>>>>>> da31704fcc4842dc9603bcb073947a2c4aab9838
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
